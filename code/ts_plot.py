@@ -1,10 +1,13 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 '''
 ocean_transport_plot.py
 Ocean Transport Time Series Plotting Script
 Sandy H. S. Herho <sandy.herho@email.ucr.edu>
 2025/05/24
 '''
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -70,8 +73,8 @@ if __name__ == "__main__":
     
     # Single labels for entire figure
     fig.text(0.04, 0.5, 'Volumetric Transport [Sv]', va='center', rotation='vertical', 
-             fontsize=16, fontweight='bold')
-    fig.text(0.5, 0.1, 'Time [years C.E.]', ha='center', fontsize=16, fontweight='bold')
+             fontsize=20, fontweight='bold')
+    fig.text(0.5, 0.1, 'Time [years C.E.]', ha='center', fontsize=20, fontweight='bold')
     
     # Create combined legend below plots
     lines = [line1[0], line2[0], line3[0], line4[0], line5[0], line6[0]]

@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 """
 Ocean Transport Data Processing Script
 
@@ -25,7 +27,7 @@ def main():
     # =========================================================================
     print("Processing AMOC data...")
     
-    # Load AMOC dataset and convert units from Sv to Sv*1e-6
+    # Load AMOC dataset and convert units from m^3/s to Sv*1e-6
     ds_amoc = xr.open_dataset("../data/raw_data/GLOBAL_OMI_NATLANTIC_amoc_max26N_timeseries.nc") * 1e-6
     
     # Create time array for AMOC data (1993-2024)

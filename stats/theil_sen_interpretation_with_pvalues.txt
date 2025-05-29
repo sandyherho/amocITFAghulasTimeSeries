@@ -1,0 +1,85 @@
+OCEAN CURRENT THEIL-SEN TREND ANALYSIS WITH SIGNIFICANCE
+=================================================================
+Analysis completed: 2025-05-29 01:33:32
+
+METHODOLOGY:
+- Theil-Sen estimator: Robust regression resistant to outliers
+- Mann-Kendall test: Non-parametric trend significance test
+- Significance level: p < 0.05
+- Time axis: All plots standardized to 1984-2023
+
+
+ITF TRENDS:
+-------------------------
+
+itf_g:
+  Slope: 0.079293 Sv/year
+  Trend per decade: 0.7929 Sv
+  Mann-Kendall p-value: 0.012283
+  Time period: 1984.0 - 2017.9
+  Data points: 408
+  Interpretation: SIGNIFICANT increasing trend (p < 0.05)
+
+itf_t:
+  Slope: 0.023517 Sv/year
+  Trend per decade: 0.2352 Sv
+  Mann-Kendall p-value: 0.373536
+  Time period: 1984.0 - 2017.9
+  Data points: 408
+  Interpretation: NO significant trend detected (p ≥ 0.05)
+
+itf_s:
+  Slope: 0.028454 Sv/year
+  Trend per decade: 0.2845 Sv
+  Mann-Kendall p-value: 0.007303
+  Time period: 1984.0 - 2017.9
+  Data points: 408
+  Interpretation: SIGNIFICANT increasing trend (p < 0.05)
+
+AGULHAS TRENDS:
+-------------------------
+
+aghulas_box:
+  Slope: 0.021142 Sv/year
+  Trend per decade: 0.2114 Sv
+  Mann-Kendall p-value: 0.875912
+  Time period: 1992.7 - 2014.9
+  Data points: 268
+  Interpretation: NO significant trend detected (p ≥ 0.05)
+
+aghulas_jet:
+  Slope: 0.229475 Sv/year
+  Trend per decade: 2.2947 Sv
+  Mann-Kendall p-value: 0.135527
+  Time period: 1992.7 - 2014.9
+  Data points: 268
+  Interpretation: NO significant trend detected (p ≥ 0.05)
+
+AMOC TRENDS:
+-------------------------
+
+amoc:
+  Slope: -0.161003 Sv/year
+  Trend per decade: -1.6100 Sv
+  Mann-Kendall p-value: 0.000000
+  Time period: 1993.0 - 2023.9
+  Data points: 372
+  Interpretation: SIGNIFICANT decreasing trend (p < 0.05)
+
+
+SUMMARY:
+----------
+Total variables analyzed: 6
+Variables with significant trends: 3
+Percentage with significant trends: 50.0%
+
+Significant trends detected:
+  - ITF_itf_g: increasing
+  - ITF_itf_s: increasing
+  - AMOC_amoc: decreasing
+
+NOTE:
+- All plots use consistent time axis (1984-2023)
+- Data gaps appear as blank periods
+- Trend lines only shown over available data periods
+- Theil-Sen regression is robust to outliers

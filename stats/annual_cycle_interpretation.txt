@@ -1,0 +1,76 @@
+OCEAN CURRENT ANNUAL CYCLE ANALYSIS
+==================================================
+Analysis completed: 2025-05-29 01:38:36
+
+1. INDONESIAN THROUGHFLOW (ITF)
+-----------------------------------
+
+ITF_G:
+  Annual mean: 5.996 Sv
+  Seasonal amplitude: 13.274 Sv
+  Maximum transport: Month 9 (13.017 Sv)
+  Minimum transport: Month 4 (-0.257 Sv)
+  Coefficient of variation: 74.09%
+
+ITF_T:
+  Annual mean: 5.508 Sv
+  Seasonal amplitude: 14.114 Sv
+  Maximum transport: Month 7 (11.722 Sv)
+  Minimum transport: Month 4 (-2.393 Sv)
+  Coefficient of variation: 83.29%
+
+ITF_S:
+  Annual mean: 1.666 Sv
+  Seasonal amplitude: 5.525 Sv
+  Maximum transport: Month 9 (4.028 Sv)
+  Minimum transport: Month 2 (-1.497 Sv)
+  Coefficient of variation: 103.48%
+
+
+2. AGULHAS CURRENT SYSTEM
+------------------------------
+
+Agulhas Box:
+  Annual mean: -85.982 Sv
+  Seasonal amplitude: 22.659 Sv
+  Maximum transport: Month 7 (-75.268 Sv)
+  Minimum transport: Month 3 (-97.927 Sv)
+  Coefficient of variation: -9.22%
+
+Agulhas Jet:
+  Annual mean: -95.097 Sv
+  Seasonal amplitude: 17.306 Sv
+  Maximum transport: Month 7 (-85.879 Sv)
+  Minimum transport: Month 3 (-103.185 Sv)
+  Coefficient of variation: -5.71%
+
+
+3. ATLANTIC MERIDIONAL OVERTURNING CIRCULATION (AMOC)
+-------------------------------------------------------
+
+AMOC:
+  Annual mean: 17.182 Sv
+  Seasonal amplitude: 3.528 Sv
+  Maximum transport: Month 11 (18.722 Sv)
+  Minimum transport: Month 4 (15.195 Sv)
+  Coefficient of variation: 7.07%
+
+
+4. SUMMARY AND PHYSICAL INTERPRETATION
+----------------------------------------
+
+Seasonal Variability Ranking (by coefficient of variation):
+  1. ITF_ITF_S: 103.48%
+  2. ITF_ITF_T: 83.29%
+  3. ITF_ITF_G: 74.09%
+  4. AMOC_AMOC: 7.07%
+  5. AGULHAS_AGHULAS_JET: -5.71%
+  6. AGULHAS_AGHULAS_BOX: -9.22%
+
+Physical Interpretation:
+- Seasonal cycles reflect monsoon forcing, thermal stratification changes,
+  and wind stress patterns in each respective ocean basin.
+- Higher coefficients of variation indicate stronger seasonal modulation
+  relative to the annual mean transport.
+- Peak transport months often correspond to seasonal wind maxima
+  and thermal forcing patterns in each region.

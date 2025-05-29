@@ -1,0 +1,179 @@
+OCEAN CURRENT DISTRIBUTION ANALYSIS
+==================================================
+Analysis completed: 2025-05-29 01:37:58
+
+1. INDONESIAN THROUGHFLOW (ITF) - DISTRIBUTION ANALYSIS
+-------------------------------------------------------
+
+ITF_G:
+  Basic Statistics:
+    Mean: 5.996 Sv
+    Median: 5.958 Sv
+    Standard Deviation: 6.034 Sv
+    Range: 31.987 Sv (-9.657 to 22.330)
+  Robust Statistics:
+    Median Absolute Deviation: 4.060 Sv
+    Interquartile Range (IQR): 8.102 Sv
+    10% Trimmed Mean: 5.941 Sv
+    20% Trimmed Mean: 5.949 Sv
+  Distribution Shape:
+    Skewness: 0.102
+    Kurtosis: -0.216
+    Coefficient of Variation: 100.65%
+  Extreme Values:
+    Maximum: 22.330 Sv on 2001-09-01 00:00:00
+    Minimum: -9.657 Sv on 2010-04-01 00:00:00
+  Percentiles:
+    5th-95th percentile range: -3.968 to 16.066 Sv
+    1st-99th percentile range: -7.232 to 19.983 Sv
+
+ITF_T:
+  Basic Statistics:
+    Mean: 5.508 Sv
+    Median: 5.627 Sv
+    Standard Deviation: 5.109 Sv
+    Range: 27.524 Sv (-6.977 to 20.547)
+  Robust Statistics:
+    Median Absolute Deviation: 3.904 Sv
+    Interquartile Range (IQR): 7.779 Sv
+    10% Trimmed Mean: 5.614 Sv
+    20% Trimmed Mean: 5.711 Sv
+  Distribution Shape:
+    Skewness: -0.124
+    Kurtosis: -0.515
+    Coefficient of Variation: 92.76%
+  Extreme Values:
+    Maximum: 20.547 Sv on 2000-07-01 00:00:00
+    Minimum: -6.977 Sv on 1992-04-01 00:00:00
+  Percentiles:
+    5th-95th percentile range: -3.023 to 13.027 Sv
+    1st-99th percentile range: -5.917 to 16.235 Sv
+
+ITF_S:
+  Basic Statistics:
+    Mean: 1.666 Sv
+    Median: 2.009 Sv
+    Standard Deviation: 1.966 Sv
+    Range: 10.647 Sv (-4.775 to 5.872)
+  Robust Statistics:
+    Median Absolute Deviation: 1.317 Sv
+    Interquartile Range (IQR): 2.546 Sv
+    10% Trimmed Mean: 1.781 Sv
+    20% Trimmed Mean: 1.879 Sv
+  Distribution Shape:
+    Skewness: -0.569
+    Kurtosis: -0.101
+    Coefficient of Variation: 118.02%
+  Extreme Values:
+    Maximum: 5.872 Sv on 2008-08-01 00:00:00
+    Minimum: -4.775 Sv on 2007-03-01 00:00:00
+  Percentiles:
+    5th-95th percentile range: -1.958 to 4.476 Sv
+    1st-99th percentile range: -3.042 to 5.263 Sv
+
+
+2. AGULHAS CURRENT SYSTEM - DISTRIBUTION ANALYSIS
+--------------------------------------------------
+
+Agulhas Box:
+  Basic Statistics:
+    Mean: -85.969 Sv
+    Median: -86.241 Sv
+    Standard Deviation: 18.545 Sv
+    Range: 125.850 Sv (-140.650 to -14.800)
+  Robust Statistics:
+    Median Absolute Deviation: 12.107 Sv
+    Interquartile Range (IQR): 24.808 Sv
+    10% Trimmed Mean: -85.952 Sv
+    20% Trimmed Mean: -86.087 Sv
+  Distribution Shape:
+    Skewness: 0.122
+    Kurtosis: 0.878
+    Coefficient of Variation: -21.57%
+  Extreme Values:
+    Maximum: -14.800 Sv on 2011-09-01 00:00:00
+    Minimum: -140.650 Sv on 1997-01-01 00:00:00
+  Percentiles:
+    5th-95th percentile range: -116.390 to -57.306 Sv
+    1st-99th percentile range: -131.745 to -37.461 Sv
+
+Agulhas Jet:
+  Basic Statistics:
+    Mean: -95.079 Sv
+    Median: -93.731 Sv
+    Standard Deviation: 15.250 Sv
+    Range: 103.878 Sv (-148.203 to -44.325)
+  Robust Statistics:
+    Median Absolute Deviation: 9.610 Sv
+    Interquartile Range (IQR): 19.482 Sv
+    10% Trimmed Mean: -94.459 Sv
+    20% Trimmed Mean: -93.982 Sv
+  Distribution Shape:
+    Skewness: -0.401
+    Kurtosis: 0.760
+    Coefficient of Variation: -16.04%
+  Extreme Values:
+    Maximum: -44.325 Sv on 2008-07-01 00:00:00
+    Minimum: -148.203 Sv on 2009-03-01 00:00:00
+  Percentiles:
+    5th-95th percentile range: -121.392 to -73.941 Sv
+    1st-99th percentile range: -135.288 to -62.339 Sv
+
+
+3. ATLANTIC MERIDIONAL OVERTURNING CIRCULATION (AMOC) - DISTRIBUTION ANALYSIS
+---------------------------------------------------------------------------
+
+AMOC:
+  Basic Statistics:
+    Mean: 17.182 Sv
+    Median: 17.211 Sv
+    Standard Deviation: 3.107 Sv
+    Range: 19.860 Sv (6.078 to 25.938)
+  Robust Statistics:
+    Median Absolute Deviation: 1.887 Sv
+    Interquartile Range (IQR): 3.753 Sv
+    10% Trimmed Mean: 17.198 Sv
+    20% Trimmed Mean: 17.194 Sv
+  Distribution Shape:
+    Skewness: -0.122
+    Kurtosis: 0.563
+    Coefficient of Variation: 18.08%
+  Extreme Values:
+    Maximum: 25.938 Sv on 1995-10-01 00:00:00
+    Minimum: 6.078 Sv on 2013-03-01 00:00:00
+  Percentiles:
+    5th-95th percentile range: 12.495 to 22.052 Sv
+    1st-99th percentile range: 9.584 to 24.696 Sv
+
+
+4. COMPARATIVE ANALYSIS AND ROBUST STATISTICS
+--------------------------------------------------
+
+Variability Ranking (by Coefficient of Variation):
+  1. ITF_ITF_S: 118.02%
+  2. ITF_ITF_G: 100.65%
+  3. ITF_ITF_T: 92.76%
+  4. AMOC_AMOC: 18.08%
+  5. AGULHAS_AGHULAS_JET: -16.04%
+  6. AGULHAS_AGHULAS_BOX: -21.57%
+
+Robust vs Classical Statistics Analysis:
+- Trimmed means reduce the influence of extreme values
+- MAD is more robust to outliers than standard deviation
+- IQR provides outlier-resistant measure of spread
+- Skewness and kurtosis indicate distribution asymmetry and tail behavior
+
+Distribution Characteristics:
+  ITF_ITF_G: symmetric, normal
+  ITF_ITF_T: symmetric, light-tailed
+  ITF_ITF_S: left-skewed, normal
+  AGULHAS_AGHULAS_BOX: symmetric, heavy-tailed
+  AGULHAS_AGHULAS_JET: symmetric, heavy-tailed
+  AMOC_AMOC: symmetric, heavy-tailed
+
+Physical Interpretation:
+- Distribution shapes reflect the underlying physical processes
+- Heavy-tailed distributions suggest occasional extreme events
+- Skewed distributions indicate asymmetric forcing mechanisms
+- High variability (CV) suggests strong external forcing
+- Extreme values often correspond to exceptional climate events
