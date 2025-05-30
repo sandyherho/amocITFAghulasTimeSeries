@@ -106,8 +106,12 @@ for i = 1:4
     current_xticks = get(gca, 'XTick');
     % Map tick positions to actual years
     if ~isempty(current_xticks)
-        % Convert indices to actual year values
-        year_ticks = interp1(1:length(time_clean), time_clean, current_xticks, 'linear', 'extrap');
+        % The wcoherence plot uses sample indices starting from 0
+        % We need to map these to our actual time values
+        n_samples = length(time_clean);
+        % Normalize tick positions to [0, 1] range then map to actual time range
+        normalized_ticks = (current_xticks - min(current_xticks)) / (max(current_xticks) - min(current_xticks));
+        year_ticks = min(time_clean) + normalized_ticks * (max(time_clean) - min(time_clean));
         set(gca, 'XTickLabel', arrayfun(@(x) sprintf('%.0f', x), year_ticks, 'UniformOutput', false));
     end
     
@@ -247,7 +251,7 @@ cb.LineWidth = 1.5;
 cb.TickLength = 0.02;
 
 % Ensure colorbar label is not cut off
-cb.Label.Position(1) = cb.Label.Position(1) + 0.5;  % Move label farther from colorbar
+cb.Label.Position(1) = cb.Label.Position(1) +  0.5;  % Move label closer to colorbar
 
 %% Add common labels
 % X-label at bottom

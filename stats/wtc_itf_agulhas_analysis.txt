@@ -1,7 +1,7 @@
 WAVELET COHERENCE ANALYSIS: ITF-AGULHAS SYSTEM
 ================================================
 Author: Sandy Herho <sandy.herho@email.ucr.edu>
-Analysis Date: 29-May-2025 21:16:19
+Analysis Date: 29-May-2025 22:47:48
 Data Points: 268
 Time Range: 1992.67 to 2014.92 years C.E.
 ================================================
