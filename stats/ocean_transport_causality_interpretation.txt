@@ -1,0 +1,88 @@
+================================================================================
+ROBUST OCEAN TRANSPORT CAUSALITY ANALYSIS
+Analysis Date: 2025-05-29 08:14:03
+================================================================================
+
+DATA SUMMARY:
+- Common analysis period: 1993-01-01 00:00:00 to 2014-12-01 00:00:00
+- Number of months: 264
+- Time series analyzed: ITF (G, T, S), Agulhas (Box, Jet), AMOC
+
+METHODS:
+1. Maximum Cross-Correlation (MCC): Linear correlation at optimal lag
+2. Convergent Cross Mapping (CCM): Nonlinear causality test
+3. Transfer Entropy (TE): Information flow metric
+- Significance: Block bootstrap (p<0.05*, p<0.01**)
+- Consensus: Number of significant methods (0-3)
+
+KEY FINDINGS:
+
+DOMINANT PATHWAYS (Consensus ≥ 2):
+
+itf_g → aghulas_box:
+  - MCC: -0.280** at lag -18 months
+  - CCM: 0.237*
+  - TE: 0.182
+  - Consensus: 2/3 methods significant
+
+itf_g → aghulas_jet:
+  - MCC: 0.264** at lag -1 months
+  - CCM: 0.302**
+  - TE: 0.180
+  - Consensus: 2/3 methods significant
+
+itf_t → aghulas_box:
+  - MCC: 0.223* at lag 0 months
+  - CCM: 0.241**
+  - TE: 0.168
+  - Consensus: 2/3 methods significant
+
+itf_s → aghulas_box:
+  - MCC: 0.265* at lag -12 months
+  - CCM: 0.193*
+  - TE: 0.173
+  - Consensus: 2/3 methods significant
+  - Physical: Lag of 12 months consistent with
+    Indian Ocean transit time for water masses
+
+PATHWAY RANKINGS BY METRIC:
+
+Strongest Cross-Correlations:
+  itf_s → aghulas_box: 0.265* at -12 months
+  itf_g → aghulas_jet: 0.264** at -1 months
+  itf_t → aghulas_box: 0.223* at 0 months
+
+Strongest Nonlinear Causality (CCM):
+  itf_g → aghulas_jet: 0.302**
+  itf_t → aghulas_box: 0.241**
+  itf_g → aghulas_box: 0.237*
+
+Strongest Information Flow (TE):
+  itf_t → aghulas_jet: 0.192
+  itf_g → amoc: 0.185
+  itf_g → aghulas_box: 0.182
+
+PHYSICAL INTERPRETATION:
+
+ITF → Agulhas Connection:
+- Geostrophic component drives Box transport
+  Mechanism: Direct volume transport continuity
+- Geostrophic component drives Jet transport
+  Mechanism: Direct volume transport continuity
+- Temperature component drives Box transport
+  Mechanism: Thermal stratification affects Agulhas retroflection
+- Salinity component drives Box transport
+  Mechanism: Salinity controls water mass density and Indian Ocean
+  thermocline depth, modulating Agulhas strength
+
+
+RECOMMENDATIONS FOR FURTHER ANALYSIS:
+
+1. Focus wavelet analysis on: itf_g → aghulas_box
+   (Highest consensus score pathway)
+2. Examine full chain: itf_g → aghulas_box → amoc
+3. Test stability during different climate phases (ENSO, IOD)
+4. Examine seasonal modulation of identified pathways
+
+================================================================================
+END OF REPORT

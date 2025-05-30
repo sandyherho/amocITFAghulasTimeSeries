@@ -1,0 +1,12 @@
+Pathway,MCC (r),Lag (months),CCM (ρ),TE (bits),Consensus
+itf_g → aghulas_box,-0.280**,-18,0.237*,0.182,2
+itf_g → aghulas_jet,0.264**,-1,0.302**,0.180,2
+itf_t → aghulas_box,0.223*,0,0.241**,0.168,2
+itf_s → aghulas_box,0.265*,-12,0.193*,0.173,2
+itf_s → aghulas_jet,-0.277**,-6,-0.001,0.169,1
+aghulas_box → amoc,-0.268**,-18,-0.071,0.150,1
+aghulas_jet → amoc,-0.247*,-19,-0.003,0.132,1
+itf_g → amoc,-0.374**,15,0.198,0.185,1
+itf_t → amoc,-0.309**,15,0.228,0.177,1
+itf_s → amoc,-0.310**,18,0.138,0.180,1
+itf_t → aghulas_jet,0.193,-1,0.178,0.192,0

@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-
+#!/usr/bin/env python3
 """
 Robust Causality Analysis for Ocean Transport Time Series
 Analyzes ITF → Agulhas → AMOC pathways using multiple causality metrics
@@ -9,7 +8,6 @@ import numpy as np
 import pandas as pd
 from scipy import stats, signal
 from sklearn.metrics import mutual_info_score
-from sklearn.feature_selection import mutual_info_regression
 import warnings
 warnings.filterwarnings('ignore')
 import os
@@ -74,53 +72,27 @@ def maximum_cross_correlation(x, y, max_lag=24):
     Positive lag means x leads y
     """
     # Standardize series
-    x = (x - np.mean(x)) / (np.std(x) + 1e-10)
-    y = (y - np.mean(y)) / (np.std(y) + 1e-10)
+    x = (x - np.mean(x)) / np.std(x)
+    y = (y - np.mean(y)) / np.std(y)
     
     # Calculate cross-correlation
     correlations = []
-    lags = list(range(-max_lag, max_lag + 1))
+    lags = range(-max_lag, max_lag + 1)
     
     for lag in lags:
-        try:
-            if lag < 0:
-                # x leads y by |lag| time steps
-                # Align: x[0:n+lag] with y[-lag:n]
-                n = len(x) + lag  # This ensures equal lengths
-                if n <= 0:
-                    correlations.append(np.nan)
-                else:
-                    corr = np.corrcoef(x[:n], y[-lag:-lag+n])[0, 1]
-                    correlations.append(corr)
-            elif lag > 0:
-                # y leads x by lag time steps
-                # Align: x[lag:] with y[:-lag]
-                n = len(x) - lag
-                if n <= 0:
-                    correlations.append(np.nan)
-                else:
-                    corr = np.corrcoef(x[lag:lag+n], y[:n])[0, 1]
-                    correlations.append(corr)
-            else:
-                # No lag
-                corr = np.corrcoef(x, y)[0, 1]
-                correlations.append(corr)
-        except:
-            correlations.append(np.nan)
+        if lag < 0:
+            corr = np.corrcoef(x[:lag], y[-lag:])[0, 1]
+        elif lag > 0:
+            corr = np.corrcoef(x[lag:], y[:-lag])[0, 1]
+        else:
+            corr = np.corrcoef(x, y)[0, 1]
+        correlations.append(corr)
     
-    # Find maximum absolute correlation (ignoring NaN values)
+    # Find maximum absolute correlation
     correlations = np.array(correlations)
-    valid_mask = ~np.isnan(correlations)
+    max_idx = np.argmax(np.abs(correlations))
     
-    if not np.any(valid_mask):
-        return 0.0, 0
-    
-    valid_corrs = correlations[valid_mask]
-    valid_lags = np.array(lags)[valid_mask]
-    
-    max_idx = np.argmax(np.abs(valid_corrs))
-    
-    return valid_corrs[max_idx], valid_lags[max_idx]
+    return correlations[max_idx], lags[max_idx]
 
 def convergent_cross_mapping(x, y, lib_sizes=None, E=3, tau=1):
     """
@@ -277,66 +249,40 @@ def block_bootstrap_significance(x, y, metric_func, n_surrogates=1000, block_len
     # Estimate block length if not provided
     if block_length is None:
         # Use autocorrelation to estimate
-        try:
-            x_centered = x - np.mean(x)
-            acf_x = np.correlate(x_centered, x_centered, mode='full')[n-1:]
-            acf_x = acf_x / acf_x[0]
-            decorr_time = np.where(acf_x < 1/np.e)[0][0] if np.any(acf_x < 1/np.e) else 10
-            block_length = max(5, min(30, decorr_time * 2))
-        except:
-            block_length = 10
+        acf_x = np.correlate(x - np.mean(x), x - np.mean(x), mode='full')[n-1:]
+        acf_x = acf_x / acf_x[0]
+        decorr_time = np.where(acf_x < 1/np.e)[0][0] if np.any(acf_x < 1/np.e) else 10
+        block_length = max(5, min(30, decorr_time * 2))
     
     # Calculate original metric
-    try:
-        original_metric = metric_func(x, y)
-        if np.isnan(original_metric):
-            return 1.0, 0.0  # Non-significant if metric is NaN
-    except:
-        return 1.0, 0.0
+    original_metric = metric_func(x, y)
     
     # Generate surrogates
     surrogate_metrics = []
-    
     for _ in range(n_surrogates):
         # Block permutation
-        n_blocks = n // block_length + (1 if n % block_length > 0 else 0)
-        
-        # Create blocks
-        blocks = []
-        for i in range(n_blocks):
-            start = i * block_length
-            end = min(start + block_length, n)
-            blocks.append(list(range(start, end)))
-        
-        # Shuffle blocks
-        np.random.shuffle(blocks)
+        n_blocks = n // block_length
+        block_indices = np.random.permutation(n_blocks)
         
         # Reconstruct surrogate series
-        surrogate_indices = []
-        for block in blocks:
-            surrogate_indices.extend(block)
+        y_surrogate = []
+        for idx in block_indices:
+            start = idx * block_length
+            end = min(start + block_length, n)
+            y_surrogate.extend(y[start:end])
         
-        # Ensure we don't exceed original length
-        surrogate_indices = surrogate_indices[:n]
-        y_surrogate = y[surrogate_indices]
+        y_surrogate = np.array(y_surrogate[:n])
         
         # Calculate metric for surrogate
-        try:
-            surrogate_metric = metric_func(x, y_surrogate)
-            if not np.isnan(surrogate_metric):
-                surrogate_metrics.append(surrogate_metric)
-        except:
-            continue
-    
-    if len(surrogate_metrics) < 100:  # Need enough surrogates for reliable p-value
-        return 1.0, original_metric
+        surrogate_metric = metric_func(x, y_surrogate)
+        surrogate_metrics.append(surrogate_metric)
     
     # Calculate p-value
     surrogate_metrics = np.array(surrogate_metrics)
-    if abs(original_metric) > 0:
-        p_value = np.mean(np.abs(surrogate_metrics) >= np.abs(original_metric))
+    if original_metric > 0:
+        p_value = np.mean(surrogate_metrics >= original_metric)
     else:
-        p_value = 1.0
+        p_value = np.mean(surrogate_metrics <= original_metric)
     
     return p_value, original_metric
 
