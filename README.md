@@ -228,8 +228,8 @@ If you use this code or data in your research, please cite:
 @article{herho2025ocean,
   title={{Strengthening ITF and Weakening AMOC: Time Series Evidence of 
          Trends and Causal Pathways to Agulhas Variability}},
-  author={Herho, Sandy H. S. and Anwar, Iwan P. and Herho, Katarina E. P. 
-          and Cahyarini, Sri Y.},
+  author={Herho, S. H. S. and Anwar, I. P. and Herho, K. E. P. 
+          and Cahyarini, S. Y.},
   journal={xxxxxx},
   year={202x},
   doi=xx.xxxx/xxxxx}
