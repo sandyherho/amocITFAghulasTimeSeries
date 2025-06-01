@@ -11,7 +11,6 @@ Sandy H. S. Herho <sandy.herho@email.ucr.edu>
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import pyleoclim as pyleo
 import os
 
 if __name__ == "__main__":
