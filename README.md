@@ -242,9 +242,3 @@ This research was supported by the Dean's Distinguished Fellowship from the Coll
 ## License
 
 This project is released under the [WTFPL](http://www.wtfpl.net/) - Do What The F*ck You Want To Public License.
-
-## Contact
-
-**Principal Investigator**: Sandy H. S. Herho  
-**Email**: sandy.herho@email.ucr.edu  
-**Institution**: Department of Earth and Planetary Sciences, University of California, Riverside
