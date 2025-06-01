@@ -232,7 +232,7 @@ If you use this code or data in your research, please cite:
           and Cahyarini, S. Y.},
   journal={xxxxxx},
   year={202x},
-  doi=xx.xxxx/xxxxx}
+  doi={xx.xxxx/xxxxx}
 }
 ```
 
